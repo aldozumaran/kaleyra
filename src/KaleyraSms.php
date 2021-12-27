@@ -1,6 +1,6 @@
 <?php
 
-namespace Mz2p15\Kaleyra;
+namespace AldoZumaran\Kaleyra;
 
 class KaleyraSms extends Kaleyra
 {
@@ -20,21 +20,6 @@ class KaleyraSms extends Kaleyra
 
     public function send($config)
     {
-        /*
-     curl -X POST "https://api.kaleyra.io/v1/<SID>/messages" \
-     -H "api-key: <API_KEY>" \
-     -H "Content-Type: <CONTENT_TYPE>" \
-     -d "to=<TO_NUMBER>" \
-     -d "sender=<SENDER_ID>" \
-     -d "type=MKT" \
-     -d "body=Hello! This is my first SMS." \
-     -d "source=API" \
-     -d "ref=<OPTIONAL_PARAMETER>" \
-     -d "ref1=<OPTIONAL_PARAMETER1>" \
-     -d "ref2=<OPTIONAL_PARAMETER2>"
-
-        */
-
         $http = $this->client();
 
         return $http->request('POST','messages', [

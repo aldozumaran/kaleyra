@@ -1,6 +1,6 @@
 <?php
 
-namespace Randolf\CustomPackage\Facades;
+namespace AldoZumaran\Kaleyra;
 
 use Illuminate\Support\Facades\Facade;
 

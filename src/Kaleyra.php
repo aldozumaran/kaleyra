@@ -1,6 +1,6 @@
 <?php
 
-namespace Mz2p15\Kaleyra;
+namespace AldoZumaran\Kaleyra;
 
 use GuzzleHttp\Client as HttpClient;
 

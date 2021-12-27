@@ -1,0 +1,29 @@
+{
+    "name": "aldozumaran/kaleyra",
+    "description": "Kaleyra plugin for Laravel",
+    "authors": [
+        {
+            "name": "Aldo Zumaran",
+            "email": "zumaran.aldo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "7.4.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mz2p15\\Kaleyra\\" : "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AldoZumaran\\Kaleyra\\KaleyraServiceProvider"
+            ],
+            "aliases": {
+                "Kaleyra": "AldoZumaran\\Kaleyra\\KaleyraFacade"
+            }
+        }
+    }
+}

@@ -22,9 +22,11 @@ class KaleyraSms extends Kaleyra
     {
         $http = $this->client();
 
-        return $http->request('POST','messages', [
+        $response = $http->request('POST','messages', [
             'json' => $this->getParams($config)
         ]);
+        $this->body = json_decode((string) $response->getBody(), true);
+        return isset($this->body['error']) && empty($this->body['error']);
     }
 
     public function getParams($config)

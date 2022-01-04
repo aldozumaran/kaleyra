@@ -11,6 +11,7 @@ class Kaleyra
     protected $config;
     protected $url;
     protected $sender;
+    protected $body = null;
 
     public function __construct()
     {
@@ -18,7 +19,7 @@ class Kaleyra
         $this->sid = config('kaleyra.sid');
         $this->key = config('kaleyra.key');
         $this->config = [
-            'base_uri' => rtrim($this->url, '/') . '/' . $this->sid. '/',
+            'base_uri' => rtrim($this->url, '/') . '/' . $this->sid . '/',
             'headers' => [
                 'api-key' => $this->key,
                 'Content-Type' => 'application/json',
@@ -39,13 +40,13 @@ class Kaleyra
     public function setBaseUrl($url)
     {
         $this->url = $url;
-        $this->config['base_uri'] = rtrim($url, '/') . '/' . $this->sid. '/';
+        $this->config['base_uri'] = rtrim($url, '/') . '/' . $this->sid . '/';
     }
 
     public function setSid($sid)
     {
         $this->sid = $sid;
-        $this->config['base_uri'] = rtrim($this->url, '/') . '/' . $sid. '/';
+        $this->config['base_uri'] = rtrim($this->url, '/') . '/' . $sid . '/';
     }
 
     public function setKey($key)
@@ -60,5 +61,10 @@ class Kaleyra
     {
         //dd($this->config);
         return new HttpClient($this->config);
+    }
+
+    public function getBody()
+    {
+        return $this->body;
     }
 }
